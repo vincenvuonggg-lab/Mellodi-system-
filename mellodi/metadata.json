@@ -1,0 +1,6 @@
+{
+  "name": "Mellodi",
+  "description": "Enterprise-grade digital ecosystem with customer ordering, POS system, staff portal, admin dashboard, and loyalty programs for Mellodi Global Tea & Lifestyle.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

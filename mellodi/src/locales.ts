@@ -1,0 +1,965 @@
+export const COUNTRY_TO_LANG: Record<string, string> = {
+  VN: "vi",
+  JP: "ja",
+  KR: "ko",
+  CN: "zh",
+  TH: "th",
+  SG: "en",
+  MY: "en",
+  US: "en",
+  CA: "en",
+  GB: "en"
+};
+
+export const UI_TRANSLATIONS: Record<string, Record<string, string>> = {
+  en: {
+    ecosystem_portal: "Ecosystem Portal",
+    home: "Home",
+    menu: "Menu",
+    stores: "Stores",
+    profile: "Profile",
+    member: "MEMBER",
+    points_balance: "LEN POINTS balance",
+    points_suffix: "PTS",
+    show_card: "Show Card",
+    add_to_cart: "Add to Cart",
+    cart: "Cart",
+    checkout: "Checkout",
+    total: "Total",
+    subtotal: "Subtotal",
+    tax_discount: "Tax & Discount",
+    notes: "Special Notes",
+    notes_placeholder: "Any special barista requests? (e.g. less sweet, extra foam)",
+    quantity: "Quantity",
+    allergens: "Allergens",
+    nutrition: "Nutrition",
+    calories: "Calories",
+    sugar: "Sugar",
+    fat: "Fat",
+    toppings: "Premium Toppings",
+    payment_method: "Payment Method",
+    place_order: "Confirm Order",
+    empty_cart: "Your cart is empty",
+    scan_qr: "Loyalty Card Scanner",
+    scan_instructions: "Scan this digital pass at any cashier terminal to earn double points, redeem free merchandise, and sync local orders.",
+    customer_phone: "Customer Phone",
+    status_pending: "Pending",
+    status_preparing: "Preparing",
+    status_ready: "Ready",
+    status_completed: "Completed",
+    status_cancelled: "Cancelled",
+    order_type_pickup: "Pickup",
+    order_type_delivery: "Delivery",
+    order_type_dine_in: "Dine-In",
+    pos_terminal: "POS Terminal",
+    staff_portal: "Staff Portal",
+    admin_dashboard: "HQ Analytics",
+    tech_blueprints: "Mellodi Tech Blueprints",
+    active_stores: "Active Stores",
+    inventory: "Inventory",
+    stock_level: "Stock Level",
+    min_alert: "Min Alert",
+    unit: "Unit",
+    status: "Status",
+    reward_store: "Reward Store",
+    reward_desc: "Redeem luxury Mellodi items using your accumulated loyalty points.",
+    points_cost: "points",
+    redeem: "Redeem",
+    insufficient_points: "Insufficient points",
+    redeem_success: "Successfully redeemed!",
+    order_id: "Order ID",
+    customer: "Customer",
+    store: "Store",
+    time: "Time",
+    action: "Action",
+    order_queue: "Live Order Queue",
+    kitchen_tracker: "Kitchen Production Tracker",
+    mark_preparing: "Start Brew",
+    mark_ready: "Mark Ready",
+    mark_completed: "Hand Over",
+    recent_transactions: "Recent Transactions",
+    executive_analytics: "Executive Analytics",
+    campaign_cms: "Campaign CMS Manager",
+    global_users: "Global Users & Roles",
+    push_center: "Audience Push Center",
+    total_revenue: "Total Revenue",
+    total_orders: "Total Orders",
+    points_distributed: "Points Distributed",
+    local_pricing: "Products & Local Pricing",
+    update_price: "Update Price",
+    price: "Price",
+    add_promo: "Add New Campaign Banner",
+    promo_title: "Campaign Title",
+    promo_subtitle: "Subtitle/Benefit",
+    promo_submit: "Launch Campaign Banner",
+    send_notif: "Broadcast Push Notification",
+    notif_title: "Notification Title",
+    notif_body: "Message Body",
+    notif_submit: "Push To All Devices",
+    active_campaigns: "Active Marketing Banners",
+    user_database: "Global User Database",
+    role: "System Role",
+    referral_code: "Referral Code",
+    back_to_shop: "Back to Shop",
+    selected_store: "Selected Store",
+    choose_store: "Choose Store",
+    available_services: "Available Services",
+    capacity: "Capacity",
+    hours: "Hours",
+    filter_all: "All",
+    size: "Size",
+    sugar_level: "Sugar Level",
+    ice_level: "Ice Level",
+    milk_type: "Milk Type",
+    temperature: "Temperature"
+  },
+  vi: {
+    ecosystem_portal: "Cổng Hệ Sinh Thái",
+    home: "Trang Chủ",
+    menu: "Thực Đơn",
+    stores: "Cửa Hàng",
+    profile: "Cá Nhân",
+    member: "THÀNH VIÊN",
+    points_balance: "Điểm tích lũy LEN POINTS",
+    points_suffix: "ĐIỂM",
+    show_card: "Thẻ Thành Viên",
+    add_to_cart: "Thêm Vào Giỏ",
+    cart: "Giỏ Hàng",
+    checkout: "Thanh Toán",
+    total: "Tổng Cộng",
+    subtotal: "Tạm Tính",
+    tax_discount: "Thuế & Khấu Trừ",
+    notes: "Ghi chú đặc biệt",
+    notes_placeholder: "Yêu cầu cho Barista? (VD: ít ngọt, nhiều kem béo)",
+    quantity: "Số Lượng",
+    allergens: "Thành phần dị ứng",
+    nutrition: "Dinh Dưỡng",
+    calories: "Năng Lượng",
+    sugar: "Đường",
+    fat: "Chất béo",
+    toppings: "Topping Cao Cấp",
+    payment_method: "Phương thức thanh toán",
+    place_order: "Xác Nhận Đặt Món",
+    empty_cart: "Giỏ hàng đang trống",
+    scan_qr: "Mã QR Thành Viên",
+    scan_instructions: "Quét mã này tại bất kỳ máy POS nào để tích gấp đôi điểm, đổi quà tặng giới hạn và đồng bộ đơn hàng.",
+    customer_phone: "SĐT Khách Hàng",
+    status_pending: "Chờ Nhận",
+    status_preparing: "Đang Pha Chế",
+    status_ready: "Đã Sẵn Sàng",
+    status_completed: "Đã Giao",
+    status_cancelled: "Đã Hủy",
+    order_type_pickup: "Mang Đi",
+    order_type_delivery: "Giao Hàng",
+    order_type_dine_in: "Tại Chỗ",
+    pos_terminal: "Máy Thu Ngân POS",
+    staff_portal: "Cổng Nhà Bếp Staff",
+    admin_dashboard: "Quản Trị HQ",
+    tech_blueprints: "Bản Thiết Kế Kỹ Thuật Mellodi",
+    active_stores: "Hệ thống Cửa Hàng",
+    inventory: "Kho Nguyên Liệu",
+    stock_level: "Tồn Kho",
+    min_alert: "Ngưỡng Cảnh Báo",
+    unit: "Đơn Vị",
+    status: "Trạng Thái",
+    reward_store: "Đổi Quà Tích Điểm",
+    reward_desc: "Sử dụng điểm tích lũy LEN POINTS để đổi các phụ kiện Mellodi giới hạn.",
+    points_cost: "điểm",
+    redeem: "Đổi Quà",
+    insufficient_points: "Không đủ điểm tích lũy",
+    redeem_success: "Đổi quà thành công!",
+    order_id: "Mã Đơn",
+    customer: "Khách Hàng",
+    store: "Cửa Hàng",
+    time: "Thời Gian",
+    action: "Thao Tác",
+    order_queue: "Đơn Hàng Hiện Tại",
+    kitchen_tracker: "Màn Hình Pha Chế Nhà Bếp",
+    mark_preparing: "Bắt Đầu Pha",
+    mark_ready: "Hoàn Thành Món",
+    mark_completed: "Đã Giao Khách",
+    recent_transactions: "Giao Dịch Gần Đây",
+    executive_analytics: "Báo Cáo Doanh Thu HQ",
+    campaign_cms: "Quản Lý Chiến Dịch CMS",
+    global_users: "Người Dùng Toàn Cầu",
+    push_center: "Tổng Đài Thông Báo",
+    total_revenue: "Tổng Doanh Thu",
+    total_orders: "Tổng Đơn Hàng",
+    points_distributed: "Điểm Đã Phát",
+    local_pricing: "Sản Phẩm & Giá Địa Phương",
+    update_price: "Cập nhật Giá",
+    price: "Giá tiền",
+    add_promo: "Thêm Banner Quảng Cáo Mới",
+    promo_title: "Tiêu Đề Chiến Dịch",
+    promo_subtitle: "Phụ Đề / Ưu Đãi",
+    promo_submit: "Kích Hoạt Banner",
+    send_notif: "Gửi Thông Báo Push Broadcast",
+    notif_title: "Tiêu Đề Thông Báo",
+    notif_body: "Nội Dung Tin Nhắn",
+    notif_submit: "Gửi Đến Toàn Bộ Thiết Bị",
+    active_campaigns: "Chiến Dịch Đang Chạy",
+    user_database: "Danh Sách Khách Hàng & Nhân Sự",
+    role: "Vai trò hệ thống",
+    referral_code: "Mã Giới Thiệu",
+    back_to_shop: "Quay lại mua sắm",
+    selected_store: "Cửa Hàng Đã Chọn",
+    choose_store: "Chọn Cửa Hàng",
+    available_services: "Dịch Vụ Sẵn Có",
+    capacity: "Sức chứa",
+    hours: "Giờ mở cửa",
+    filter_all: "Tất Cả",
+    size: "Kích Cỡ",
+    sugar_level: "Mức Đường",
+    ice_level: "Mức Đá",
+    milk_type: "Loại Sữa",
+    temperature: "Nhiệt Độ"
+  },
+  ja: {
+    ecosystem_portal: "エコシステムポータル",
+    home: "ホーム",
+    menu: "メニュー",
+    stores: "店舗一覧",
+    profile: "マイページ",
+    member: "会員",
+    points_balance: "保有LENポイント",
+    points_suffix: "ポイント",
+    show_card: "会員証表示",
+    add_to_cart: "カートに追加",
+    cart: "カート",
+    checkout: "お会計",
+    total: "合計金額",
+    subtotal: "小計",
+    tax_discount: "税金＆割引",
+    notes: "特別リクエスト",
+    notes_placeholder: "バリスタへの要望（甘さ控えめ、クリーム多め等）",
+    quantity: "数量",
+    allergens: "アレルゲン情報",
+    nutrition: "栄養成分",
+    calories: "カロリー",
+    sugar: "糖類",
+    fat: "脂質",
+    toppings: "プレミアムトッピング",
+    payment_method: "決済方法",
+    place_order: "注文を確定する",
+    empty_cart: "カートは空です",
+    scan_qr: "ロイヤルティカードスキャナー",
+    scan_instructions: "お会計時にこのQRコードをスキャンすると、ポイントが2倍になり、限定グッズと交換できます。",
+    customer_phone: "お客様電話番号",
+    status_pending: "保留中",
+    status_preparing: "調理中",
+    status_ready: "お渡し可能",
+    status_completed: "完了",
+    status_cancelled: "キャンセル済み",
+    order_type_pickup: "お持ち帰り",
+    order_type_delivery: "デリバリー",
+    order_type_dine_in: "店内飲食",
+    pos_terminal: "POSレジ",
+    staff_portal: "キッチンポータル",
+    admin_dashboard: "本部管理ダッシュボード",
+    tech_blueprints: "Mellodi システム仕様書",
+    active_stores: "営業中の店舗",
+    inventory: "在庫管理",
+    stock_level: "在庫数",
+    min_alert: "アラート基準値",
+    unit: "単位",
+    status: "ステータス",
+    reward_store: "ポイント交換所",
+    reward_desc: "貯まったLENポイントを使って、Mellodi限定プレミアムグッズと交換しましょう。",
+    points_cost: "ポイント",
+    redeem: "交換する",
+    insufficient_points: "ポイントが不足しています",
+    redeem_success: "交換が完了しました！",
+    order_id: "注文番号",
+    customer: "お客様",
+    store: "店舗",
+    time: "時刻",
+    action: "操作",
+    order_queue: "現在の注文キュー",
+    kitchen_tracker: "厨房調理進行管理",
+    mark_preparing: "抽出開始",
+    mark_ready: "調理完了",
+    mark_completed: "お渡し完了",
+    recent_transactions: "最近の取引履歴",
+    executive_analytics: "経営分析ボード",
+    campaign_cms: "キャンペーン管理CMS",
+    global_users: "グローバルユーザー＆ロール",
+    push_center: "プッシュ通知一斉配信",
+    total_revenue: "総売上高",
+    total_orders: "総注文数",
+    points_distributed: "配布済ポイント",
+    local_pricing: "商品・地域別価格設定",
+    update_price: "価格改定",
+    price: "価格",
+    add_promo: "新規キャンペーンバナー登録",
+    promo_title: "キャンペーン名",
+    promo_subtitle: "サブタイトル / 特典",
+    promo_submit: "キャンペーン開始",
+    send_notif: "プッシュ通知一斉送信",
+    notif_title: "通知タイトル",
+    notif_body: "通知本文",
+    notif_submit: "全端末に配信",
+    active_campaigns: "掲載中のバナー",
+    user_database: "顧客・スタッフデータベース",
+    role: "システム権限",
+    referral_code: "紹介コード",
+    back_to_shop: "お買い物を続ける",
+    selected_store: "選択中の店舗",
+    choose_store: "店舗を選ぶ",
+    available_services: "提供サービス",
+    capacity: "座席数",
+    hours: "営業時間",
+    filter_all: "すべて",
+    size: "サイズ",
+    sugar_level: "甘さ",
+    ice_level: "氷の量",
+    milk_type: "ミルクの種類",
+    temperature: "温度"
+  },
+  zh: {
+    ecosystem_portal: "系统生态门户",
+    home: "首页",
+    menu: "茶饮菜单",
+    stores: "门店列表",
+    profile: "个人中心",
+    member: "尊贵会员",
+    points_balance: "LEN积分余额",
+    points_suffix: "积分",
+    show_card: "显示会员卡",
+    add_to_cart: "加入选购车",
+    cart: "选购车",
+    checkout: "确认结账",
+    total: "总计金额",
+    subtotal: "小计",
+    tax_discount: "税费及优惠",
+    notes: "特殊备注",
+    notes_placeholder: "有什么想对咖啡师说的？（例如：少甜、加厚奶盖）",
+    quantity: "数量",
+    allergens: "过敏原信息",
+    nutrition: "营养成分",
+    calories: "热量",
+    sugar: "含糖量",
+    fat: "脂肪",
+    toppings: "奢华配料",
+    payment_method: "付款方式",
+    place_order: "立即提交订单",
+    empty_cart: "选购车目前是空的",
+    scan_qr: "尊贵会员积分码",
+    scan_instructions: "在任何收银台扫描此二维码，即可获得双倍积分，兑换限量周边并同步订单。",
+    customer_phone: "顾客电话",
+    status_pending: "待接单",
+    status_preparing: "制作中",
+    status_ready: "可取餐",
+    status_completed: "已完成",
+    status_cancelled: "已取消",
+    order_type_pickup: "打包自提",
+    order_type_delivery: "外卖配送",
+    order_type_dine_in: "堂食享用",
+    pos_terminal: "收银系统 POS",
+    staff_portal: "后厨制作系统",
+    admin_dashboard: "总部决策大屏",
+    tech_blueprints: "Mellodi 技术规格蓝图",
+    active_stores: "营业中门店",
+    inventory: "物料库存管理",
+    stock_level: "当前库存",
+    min_alert: "预警阈值",
+    unit: "单位",
+    status: "状态",
+    reward_store: "积分兑换商城",
+    reward_desc: "使用累积的LEN积分，免费兑换Mellodi限量版周边精品。",
+    points_cost: "积分",
+    redeem: "立即兑换",
+    insufficient_points: "积分余额不足",
+    redeem_success: "兑换成功！",
+    order_id: "订单号",
+    customer: "顾客",
+    store: "门店",
+    time: "下单时间",
+    action: "操作",
+    order_queue: "当前制作队列",
+    kitchen_tracker: "后厨实时配方屏幕",
+    mark_preparing: "开始制作",
+    mark_ready: "制作完成",
+    mark_completed: "确认出餐",
+    recent_transactions: "近期交易流水",
+    executive_analytics: "核心经营分析",
+    campaign_cms: "营销活动 CMS",
+    global_users: "全球用户与权限",
+    push_center: "受众精准推送",
+    total_revenue: "总营业额",
+    total_orders: "总订单量",
+    points_distributed: "已发LEN积分",
+    local_pricing: "产品地域定价",
+    update_price: "修改定价",
+    price: "价格",
+    add_promo: "创建新营销横幅",
+    promo_title: "营销标题",
+    promo_subtitle: "活动副标题 / 优惠信息",
+    promo_submit: "发布营销活动",
+    send_notif: "群发广播推送通知",
+    notif_title: "通知标题",
+    notif_body: "通知内容",
+    notif_submit: "推送至所有设备",
+    active_campaigns: "投放中的营销活动",
+    user_database: "全球用户及员工名册",
+    role: "系统角色",
+    referral_code: "专属邀请码",
+    back_to_shop: "返回选购",
+    selected_store: "当前选中门店",
+    choose_store: "选择门店",
+    available_services: "提供服务",
+    capacity: "座位数",
+    hours: "营业时间",
+    filter_all: "全部",
+    size: "规格",
+    sugar_level: "糖度",
+    ice_level: "冰度",
+    milk_type: "牛奶种类",
+    temperature: "温度"
+  },
+  ko: {
+    ecosystem_portal: "에코시스템 포털",
+    home: "홈",
+    menu: "티 메뉴",
+    stores: "매장 안내",
+    profile: "마이페이지",
+    member: "VIP 멤버",
+    points_balance: "보유 LEN 포인트",
+    points_suffix: "포인트",
+    show_card: "회원 카드 보기",
+    add_to_cart: "장바구니 담기",
+    cart: "장바구니",
+    checkout: "결제하기",
+    total: "총 결제금액",
+    subtotal: "주문금액",
+    tax_discount: "세금 및 할인",
+    notes: "특별 요청사항",
+    notes_placeholder: "바리스타에게 요청할 사항이 있나요? (예: 덜 달게, 폼 많이)",
+    quantity: "수량",
+    allergens: "알레르기 정보",
+    nutrition: "영양성분",
+    calories: "열량",
+    sugar: "당류",
+    fat: "지방",
+    toppings: "프리미엄 토핑",
+    payment_method: "결제수단",
+    place_order: "주문 확정하기",
+    empty_cart: "장바구니가 비어 있습니다",
+    scan_qr: "로열티 디지털 회원권",
+    scan_instructions: "주문 시 이 QR 코드를 스캔하시면 포인트가 2배 적립되며, 한정판 브랜드 굿즈 교환 및 주문 동기화가 가능합니다.",
+    customer_phone: "고객 연락처",
+    status_pending: "대기중",
+    status_preparing: "제조중",
+    status_ready: "제조 완료",
+    status_completed: "수령 완료",
+    status_cancelled: "주문 취소됨",
+    order_type_pickup: "포장하기",
+    order_type_delivery: "배달 주문",
+    order_type_dine_in: "매장 식사",
+    pos_terminal: "POS 캐셔 단말기",
+    staff_portal: "주방 제조 포털",
+    admin_dashboard: "본사 분석 대시보드",
+    tech_blueprints: "Mellodi 시스템 블루프린트",
+    active_stores: "활성 매장 목록",
+    inventory: "재료 재고 관리",
+    stock_level: "현재 재고",
+    min_alert: "최저 경고값",
+    unit: "단위",
+    status: "상태",
+    reward_store: "포인트 스토어",
+    reward_desc: "적립된 LEN 포인트를 사용하여 Mellodi의 럭셔리 라이프스타일 한정판 굿즈를 무료로 받으세요.",
+    points_cost: "포인트",
+    redeem: "교환하기",
+    insufficient_points: "포인트가 부족합니다",
+    redeem_success: "성공적으로 교환되었습니다!",
+    order_id: "주문번호",
+    customer: "고객명",
+    store: "매장명",
+    time: "주문시간",
+    action: "조치",
+    order_queue: "실시간 주문 진행 대기열",
+    kitchen_tracker: "주방 레시피 현황판",
+    mark_preparing: "제조 시작",
+    mark_ready: "완료 알림",
+    mark_completed: "고객 전달",
+    recent_transactions: "최근 거래 기록",
+    executive_analytics: "임원 분석 모니터",
+    campaign_cms: "캠페인 관리 CMS",
+    global_users: "글로벌 사용자 및 권한",
+    push_center: "고객 푸시 알림 센터",
+    total_revenue: "총 매출액",
+    total_orders: "총 주문건수",
+    points_distributed: "배포된 포인트",
+    local_pricing: "제품 현지 가격 설정",
+    update_price: "가격 변경",
+    price: "가격",
+    add_promo: "신규 캠페인 배너 추가",
+    promo_title: "캠페인 제목",
+    promo_subtitle: "부제목 / 혜택 정보",
+    promo_submit: "캠페인 배너 게시",
+    send_notif: "전체 푸시 알림 방송",
+    notif_title: "알림 제목",
+    notif_body: "알림 메시지 본문",
+    notif_submit: "모든 기기에 전송",
+    active_campaigns: "진행중인 마케팅 배너",
+    user_database: "글로벌 사용자 및 직원 장부",
+    role: "시스템 권한",
+    referral_code: "추천인 코드",
+    back_to_shop: "쇼핑 계속하기",
+    selected_store: "선택된 매장",
+    choose_store: "매장 선택",
+    available_services: "제공 서비스",
+    capacity: "좌석수",
+    hours: "영업시간",
+    filter_all: "전체",
+    size: "사이즈",
+    sugar_level: "당도",
+    ice_level: "얼음량",
+    milk_type: "우유 종류",
+    temperature: "온도"
+  },
+  th: {
+    ecosystem_portal: "พอร์ทัลระบบนิเวศน์",
+    home: "หน้าแรก",
+    menu: "เมนูเครื่องดื่ม",
+    stores: "สาขาของเรา",
+    profile: "โปรไฟล์",
+    member: "สมาชิก VIP",
+    points_balance: "คะแนน LEN POINTS สะสม",
+    points_suffix: "คะแนน",
+    show_card: "แสดงบัตรสมาชิก",
+    add_to_cart: "ใส่ตะกร้า",
+    cart: "ตะกร้าสินค้า",
+    checkout: "ชำระเงิน",
+    total: "ยอดรวมทั้งสิ้น",
+    subtotal: "ยอดรวม",
+    tax_discount: "ภาษีและส่วนลด",
+    notes: "ข้อความพิเศษถึงบาริสต้า",
+    notes_placeholder: "ต้องการระบุอะไรพิเศษไหม? (เช่น หวานน้อยมาก, ขอวิปโฟมหนาๆ)",
+    quantity: "จำนวน",
+    allergens: "ข้อมูลสารก่อภูมิแพ้",
+    nutrition: "ข้อมูลโภชนาการ",
+    calories: "แคลอรี",
+    sugar: "น้ำตาล",
+    fat: "ไขมัน",
+    toppings: "ท็อปปิ้งพรีเมียม",
+    payment_method: "วิธีการชำระเงิน",
+    place_order: "ยืนยันการสั่งซื้อ",
+    empty_cart: "ตะกร้าสินค้าของคุณว่างเปล่า",
+    scan_qr: "คิวอาร์โค้ดบัตรสมาชิก",
+    scan_instructions: "สแกนบัตรดิจิทัลนี้ที่เครื่องคิดเงินทุกสาขาเพื่อรับคะแนนสะสม 2 เท่า แลกรับสินค้าลิขสิทธิ์ฟรี และซิงค์รายการสั่งซื้อ",
+    customer_phone: "เบอร์โทรศัพท์ลูกค้า",
+    status_pending: "รอรับออเดอร์",
+    status_preparing: "กำลังปรุง",
+    status_ready: "พร้อมรับสินค้า",
+    status_completed: "จัดส่งเสร็จสิ้น",
+    status_cancelled: "ยกเลิกออเดอร์",
+    order_type_pickup: "รับที่ร้าน",
+    order_type_delivery: "จัดส่งถึงบ้าน",
+    order_type_dine_in: "ทานที่ร้าน",
+    pos_terminal: "เครื่องคิดเงิน POS",
+    staff_portal: "ระบบครัวพนักงาน",
+    admin_dashboard: "แดชบอร์ดผู้บริหาร HQ",
+    tech_blueprints: "พิมพ์เขียวสเปกทางเทคนิค Mellodi",
+    active_stores: "สาขาที่เปิดให้บริการ",
+    inventory: "คลังวัตถุดิบและอุปกรณ์",
+    stock_level: "ระดับสินค้าคงคลัง",
+    min_alert: "จุดแจ้งเตือนขั้นต่ำ",
+    unit: "หน่วย",
+    status: "สถานะ",
+    reward_store: "ร้านค้าแลกรางวัล",
+    reward_desc: "ใช้คะแนนสะสม LEN POINTS ของคุณเพื่อแลกรับสินค้าไลฟ์สไตล์พรีเมียมของ Mellodi",
+    points_cost: "คะแนน",
+    redeem: "แลกรางวัล",
+    insufficient_points: "คะแนนสะสมของคุณไม่เพียงพอ",
+    redeem_success: "แลกรางวัลสำเร็จแล้ว!",
+    order_id: "เลขออเดอร์",
+    customer: "ลูกค้า",
+    store: "สาขา",
+    time: "เวลา",
+    action: "ดำเนินการ",
+    order_queue: "คิวอาร์เดอร์สด",
+    kitchen_tracker: "หน้าจอติดตามการปรุงในครัว",
+    mark_preparing: "เริ่มปรุงน้ำชา",
+    mark_ready: "ปรุงเสร็จสิ้น",
+    mark_completed: "ส่งมอบสินค้า",
+    recent_transactions: "ธุรกรรมล่าสุด",
+    executive_analytics: "การวิเคราะห์ผู้บริหาร",
+    campaign_cms: "จัดการแคมเปญ CMS",
+    global_users: "รายชื่อผู้ใช้และบทบาท",
+    push_center: "ศูนย์ส่งการแจ้งเตือน",
+    total_revenue: "รายได้รวม",
+    total_orders: "ยอดสั่งซื้อรวม",
+    points_distributed: "คะแนนสะสมที่แจกแล้ว",
+    local_pricing: "สินค้าและราคาตามสกุลเงินท้องถิ่น",
+    update_price: "อัปเดตราคา",
+    price: "ราคา",
+    add_promo: "เพิ่มแบนเนอร์โปรโมชันใหม่",
+    promo_title: "หัวข้อแคมเปญ",
+    promo_subtitle: "ข้อความย่อย / สิทธิประโยชน์",
+    promo_submit: "เปิดตัวแบนเนอร์โฆษณา",
+    send_notif: "บรอดแคสต์ส่งการแจ้งเตือน",
+    notif_title: "หัวข้อการแจ้งเตือน",
+    notif_body: "เนื้อหาข้อความ",
+    notif_submit: "ส่งไปยังอุปกรณ์ทั้งหมด",
+    active_campaigns: "แบนเนอร์การตลาดที่ใช้งานอยู่",
+    user_database: "ฐานข้อมูลผู้ใช้และพนักงาน",
+    role: "บทบาทในระบบ",
+    referral_code: "รหัสแนะนำเพื่อน",
+    back_to_shop: "กลับไปสั่งสินค้า",
+    selected_store: "สาขาที่เลือก",
+    choose_store: "เลือกสาขา",
+    available_services: "บริการที่รองรับ",
+    capacity: "ความจุที่นั่ง",
+    hours: "เวลาทำการ",
+    filter_all: "ทั้งหมด",
+    size: "ขนาด",
+    sugar_level: "ระดับความหวาน",
+    ice_level: "ระดับน้ำแข็ง",
+    milk_type: "ประเภทนม",
+    temperature: "อุณหภูมิ"
+  }
+};
+
+export const PRODUCT_TRANSLATIONS: Record<string, Record<string, { name: string, description: string }>> = {
+  p1: {
+    en: {
+      name: "Mellodi Signature Jasmine Green Milk Tea",
+      description: "A flawless infusion of organic high-mountain green tea scented with midnight-bloomed jasmine buds, layered with pristine cream."
+    },
+    vi: {
+      name: "Trà Sữa Lài Đặc Biệt Mellodi",
+      description: "Sự kết hợp hoàn hảo giữa trà xanh hữu cơ vùng núi cao ướp hương hoa lài nở ban đêm quyến rũ, hòa quyện với lớp kem sữa béo mịn đặc biệt."
+    },
+    ja: {
+      name: "メロディ 特製ジャスミン緑茶ミルクティー",
+      description: "厳選された高山有機緑茶に、真夜中に開花したジャスミンの蕾の香りを完璧にのせ、純粋な生クリームを重ね合わせた至福の一杯。"
+    },
+    zh: {
+      name: "茉莉翠绿奶茶",
+      description: "精选高山有机绿茶，融合午夜盛开的茉莉花蕾，搭配丝滑鲜奶油，芬芳扑鼻，回甘悠长。"
+    },
+    ko: {
+      name: "멜로디 시그니처 자스민 그린 밀크티",
+      description: "밤에 피어난 자스민 꽃봉오리의 향을 정교하게 입힌 유기농 고산지대 그린티와 깨끗하고 진한 생크림이 완벽하게 어우러진 시그니처 밀크티."
+    },
+    th: {
+      name: "ชานมมะลิสูตรซิกเนเจอร์ Mellodi",
+      description: "ชาเขียวออร์แกนิกจากเทือกเขาสูง อบร่ำด้วยดอกมะลิป่าที่บานตอนเที่ยงคืน ผสมผสานอย่างสมบูรณ์แบบกับครีมนมสดที่เข้มข้นกลมกล่อม"
+    }
+  },
+  p2: {
+    en: {
+      name: "Golden Oolong Crème Latte",
+      description: "Heavy-roast Taiwanese Dong Ding Oolong Tea, topped with a velvety layer of salty organic cream foam and golden caramel sprinkles."
+    },
+    vi: {
+      name: "Trà Ô Long Kem Muối Hoàng Kim",
+      description: "Trà Ô Long Đ็อง Đinh Đài Loan rang đậm vị, phủ lớp màng kem sữa mặn organic mượt mà và những hạt caramel giòn tan màu vàng óng."
+    },
+    ja: {
+      name: "黄金ウーロンクリームラテ",
+      description: "香ばしく深煎りされた台湾産凍頂ウーロン茶に、ベルベットのような有機岩塩クリームフォームをのせ、黄金のキャラメルをトッピング。"
+    },
+    zh: {
+      name: "金凤乌龙岩盐拉特",
+      description: "深焙台湾冻顶乌龙茶，覆以丝滑如天鹅绒般的岩盐有机奶盖，并撒上金色焦糖碎，醇香咸甜。"
+    },
+    ko: {
+      name: "골든 우롱 크림 라떼",
+      description: "깊고 진하게 로스팅한 대만 동정 우롱차 위에 벨벳처럼 부드럽고 짭조름한 유기농 크림 폼과 달콤한 골든 카라멜 칩을 얹은 라떼."
+    },
+    th: {
+      name: "ชาอู่หลงครีมลาเต้สีทอง",
+      description: "ชาอู่หลงตงติงจากไต้หวัน คั่วเข้มหอมกรุ่น ท็อปด้วยฟองครีมเกลือออร์แกนิกเนื้อเนียนนุ่มโรยด้วยคาราเมลสีทองกรุบกรอบ"
+    }
+  },
+  p3: {
+    en: {
+      name: "Mellodi Camellia Mountain White Tea",
+      description: "Ultra-premium delicate white tea cold-infused with distilled camellia essence. Pure, restorative, and floral."
+    },
+    vi: {
+      name: "Bạch Trà Camellia Sơn Trà",
+      description: "Bạch trà thượng hạng thanh tao được chiết xuất lạnh cùng tinh chất hoa trà (camellia) chưng cất. Hương vị tinh khiết, phục hồi sức sống."
+    },
+    ja: {
+      name: "メロディ 山茶花白茶",
+      description: "山茶花（カメリア）の蒸留エキスをコールドインフューズした、最高品質の繊細な白茶。純粋で、心身を癒す豊かなフローラル香。"
+    },
+    zh: {
+      name: "山茶花白茶",
+      description: "极品白茶冷萃，融入蒸馏提取的山茶花花卉精华。口感纯净甘甜，具有极佳的花香与舒缓效果。"
+    },
+    ko: {
+      name: "멜로디 카멜리아 마운틴 화이트 티",
+      description: "신선한 동백꽃(카멜리아) 정수를 저온 추출하여 블렌딩한 초프리미엄 백차. 지친 몸과 마음에 순수한 생기를 불어넣어 주는 꽃향기."
+    },
+    th: {
+      name: "ชาขาวดอกคาเมลเลีย",
+      description: "ชาขาวเกรดพรีเมียมอันละเอียดอ่อน สกัดเย็นด้วยสารสกัดดอกคาเมลเลียที่ผ่านการกลั่นบริสุทธิ์ ให้ความรู้สึกสดชื่น ผ่อนคลาย และหอมละมุน"
+    }
+  },
+  p4: {
+    en: {
+      name: "Citrus Golden Pomelo Fruit Tea",
+      description: "Hand-squeezed Ruby Grapefruit and Honey Pomelo combined with high-mountain Jin Xuan Oolong tea over crystal crushed ice."
+    },
+    vi: {
+      name: "Trà Trái Cây Bưởi Hồng Kim Tuyên",
+      description: "Bưởi hồng đào và bưởi mật ong vắt tay, kết hợp cùng trà Ô Long Kim Tuyên hảo hạng vùng núi cao và đá xay nhuyễn."
+    },
+    ja: {
+      name: "シトラスゴールデンポメロフルーツティー",
+      description: "手絞りのルビーグレープフルーツとハニーポメロを、高山金萱（キンセン）ウーロン茶と合わせ、クラッシュアイスで爽やかに仕上げた一杯。"
+    },
+    zh: {
+      name: "西柚金萱冰茶",
+      description: "手榨红宝石西柚与蜂蜜柚子，搭配高山金萱乌龙茶，融入晶莹剔透的碎冰之中，酸甜清爽。"
+    },
+    ko: {
+      name: "시트러스 골든 포멜로 과일티",
+      description: "손으로 직접 짠 자몽과 달콤한 꿀 유자를 고산지대 금훤(Jin Xuan) 우롱차와 믹스하여 시원한 크러쉬드 아이스와 함께 즐기는 과일 블렌딩 티."
+    },
+    th: {
+      name: "ชาผลไม้ส้มโอทองคำและส้มซิตรัส",
+      description: "เกรปฟรุตทับทิมคั้นสด และส้มโอผสมน้ำผึ้ง ผสานกับชาอู่หลงจินเซวียนจากยอดเขาสูง เสิร์ฟพร้อมน้ำแข็งเกล็ดคริสตัลใสเย็นฉ่ำ"
+    }
+  },
+  p5: {
+    en: {
+      name: "White Peach Oolong Breeze",
+      description: "Succulent Yamanashi white peach pureed and shaken with light Oolong tea and organic aloe vera pulps."
+    },
+    vi: {
+      name: "Trà Ô Long Đào Đá Lắc",
+      description: "Đào trắng Yamanashi căng mọng xay nhuyễn, lắc đều cùng trà Ô Long thanh mát và thạch nha đam hữu cơ mọng nước."
+    },
+    ja: {
+      name: "白桃ウーロンブリーズ",
+      description: "ジューシーな山梨県産白桃のピューレを、すっきりとしたウーロン茶とシェイクし、有機アロエベラ果肉を贅沢に加えた爽やかな一杯。"
+    },
+    zh: {
+      name: "白桃乌龙果茶",
+      description: "多汁的山梨县白桃果泥，与清爽的乌龙茶充分摇匀，加入饱满的有机库拉索芦荟果肉，清甜沁肺。"
+    },
+    ko: {
+      name: "화이트 피치 우롱 브리즈",
+      description: "달콤하고 과즙이 풍부한 야마나시 백도 피치 퓌레를 가벼운 우롱차와 함께 쉐이킹하고, 식감 좋은 유기농 알로에 베라 토핑을 추가한 티."
+    },
+    th: {
+      name: "ชาอู่หลงพีชขาวออร์แกนิก",
+      description: "ลูกพีชขาวรสหวานฉ่ำจากยามานาชิ นำมาบดละเอียดและเชคกับชาอู่หลงรสละมุน เสริมเคี้ยวสนุกด้วยเนื้อว่านหางจระเข้ออร์แกนิก"
+    }
+  },
+  p6: {
+    en: {
+      name: "Pistachio Hazelnut Mocha Latte",
+      description: "Sourced micro-lot Ethiopian Arabica espresso with steamed oat milk, house hazelnut praline paste, and raw pistachio foam crumbs."
+    },
+    vi: {
+      name: "Cà Phê Mocha Hạt Dẻ Cười & Hạt Phỉ",
+      description: "Cà phê espresso Arabica Ethiopia từ nông trại nhỏ hòa cùng sữa yến mạch ấm, sốt bơ hạt phỉ thượng hạng, và bọt sữa hạt dẻ cười giòn tan."
+    },
+    ja: {
+      name: "ピスタチオヘーゼルナッツモカラテ",
+      description: "厳選されたエチオピア産アラビカ種のエスプレッソに、スチームオーツミルク、自家製ヘーゼルナッツプラリネ、生のピスタチオ泡を飾った贅沢ラテ。"
+    },
+    zh: {
+      name: "开心果榛果拿铁摩卡",
+      description: "选用埃塞俄比亚微产区阿拉比卡浓缩咖啡，融入温热燕麦奶、特制榛果酱，覆以香浓开心果奶泡与碎坚果。"
+    },
+    ko: {
+      name: "피스타치오 헤이즐넛 모카 라떼",
+      description: "에티오피아 스페셜티 아라비카 에스프레소에 부드러운 스팀 오트 밀크, 수제 헤이즐넛 프랄린 페이스트, 고소한 생피스타치오 폼 칩을 더한 라떼."
+    },
+    th: {
+      name: "พิสตาชิโอเฮเซลนัทมอคค่าลาเต้",
+      description: "ช็อตเอสเพรสโซอาราบิก้าเอธิโอเปียเกรดพรีเมียม ผสมกับนมโอ๊ตอุ่นๆ ซอสเฮเซลนัทพราลีนสูตรโฮมเมด และฟองครีมพิสตาชิโอบดละเอียด"
+    }
+  },
+  p7: {
+    en: {
+      name: "Matcha Jasmine Crepê Cake",
+      description: "Handcrafted 30-layer French crepe cake infused with organic Uji Matcha powder and light whipped jasmine cream."
+    },
+    vi: {
+      name: "Bánh Crepe Ngàn Lớp Matcha Lài",
+      description: "Bánh crepe 30 lớp thủ công kiểu Pháp tẩm bột Matcha Uji hữu cơ siêu mịn, xen kẽ các lớp kem tươi đánh bông hương hoa lài dịu nhẹ."
+    },
+    ja: {
+      name: "抹茶ジャスミンミルクレープケーキ",
+      description: "京都宇治産の有機抹茶をふんだんに使用し、手作りで30層に重ねたフレンチクレープに、軽やかなジャスミンホイップクリームをサンド。"
+    },
+    zh: {
+      name: "抹茶茉莉千层蛋糕",
+      description: "手工打造的30层法式千层蛋糕，融入日本宇治有机抹茶粉，交织着轻盈的茉莉花香鲜奶油。"
+    },
+    ko: {
+      name: "말차 자스민 크레이프 케이크",
+      description: "유기농 우지 말차 파우더와 향긋하고 가벼운 자스민 휘핑 크림을 레이어링하여 정성껏 30층으로 쌓아 올린 수제 프렌치 크레이프 케이크."
+    },
+    th: {
+      name: "เครปเค้กมัทฉะมะลิฝรั่งเศส",
+      description: "เครปเค้กฝรั่งเศส 30 ชั้นทำมือสุดประณีต ผสมผสานผงมัทฉะออร์แกนิกจากเมืองอูจิ แทรกซึมด้วยครีมวิปกลิ่นดอกมะลิรสบางเบา"
+    }
+  },
+  p8: {
+    en: {
+      name: "Mellodi Matte Brown Thermal Bottle",
+      description: "Limited Edition dual-wall 316 medical-grade stainless steel flask with our brand signature matte-leather textured finish."
+    },
+    vi: {
+      name: "Bình Giữ Nhiệt Cao Cấp Mellodi Nâu Nhám",
+      description: "Phiên bản giới hạn bình giữ nhiệt inox 316 chuẩn y khoa hai lớp, hoàn thiện với lớp vỏ da mờ nâu nhám sang trọng mang thương hiệu Mellodi."
+    },
+    ja: {
+      name: "メロディ マットブラウン サーマルボトル",
+      description: "医療用グレード316ステンレスを使用した2重構造の魔法瓶。ブランドの象徴であるマットレザー調の質感仕上げ。"
+    },
+    zh: {
+      name: "奢华磨砂咖啡保温杯",
+      description: "限量版双层316医用级不锈钢保温杯，采用Mellodi经典的哑光磨砂皮革质感表面处理，尊贵典雅。"
+    },
+    ko: {
+      name: "멜로디 매트 브라운 텀블러",
+      description: "의료용 316 등급 스테인리스 스틸로 제작된 이중 진공 벽 구조의 텀블러. 고급스러운 브랜드 시그니처 가죽 엠보싱 매트 브라운 피니시."
+    },
+    th: {
+      name: "กระบอกน้ำเก็บอุณหภูมิสีน้ำตาลแมตต์ Mellodi",
+      description: "กระบอกน้ำสองชั้นรุ่นลิมิเต็ดเอดิชัน ทำจากสแตนเลสเกรดการแพทย์ 316 โดดเด่นด้วยพื้นผิวสัมผัสหนังสีน้ำตาลแมตต์ที่เป็นเอกลักษณ์ของแบรนด์"
+    }
+  }
+};
+
+export const TOPPING_TRANSLATIONS: Record<string, Record<string, string>> = {
+  t1: {
+    en: "Golden Boba Pearls",
+    vi: "Trân Châu Hoàng Kim",
+    ja: "黄金タピオカパール",
+    zh: "黄金水晶珍珠",
+    ko: "골든 타피오카 펄",
+    th: "ไข่มุกทองคำ"
+  },
+  t2: {
+    en: "Cheesy Cream Foam",
+    vi: "Kem Phô Mai Muối Biển",
+    ja: "チーズクリームフォーム",
+    zh: "芝士海盐奶盖",
+    ko: "치즈 크림 폼",
+    th: "โฟมครีมชีส"
+  },
+  t3: {
+    en: "Brown Sugar Jelly",
+    vi: "Thạch Đường Đen",
+    ja: "黒糖ゼリー",
+    zh: "手作黑糖冻",
+    ko: "브라운 슈가 젤리",
+    th: "เจลลี่น้ำตาลแดง"
+  },
+  t4: {
+    en: "Organic Coconut Jelly",
+    vi: "Thạch Dừa Hữu Cơ",
+    ja: "有機ナタデココ",
+    zh: "有机椰果",
+    ko: "유기농 코코넛 젤리",
+    th: "วุ้นมะพร้าวออร์แกนิก"
+  },
+  t5: {
+    en: "Red Bean paste",
+    vi: "Đậu Đỏ Ngọt Nhật Bản",
+    ja: "十勝あずき餡",
+    zh: "蜜渍红豆泥",
+    ko: "단팥 페이스트",
+    th: "ถั่วแดงบดหวาน"
+  },
+  t6: {
+    en: "Mellodi Crème Brûlée Pudding",
+    vi: "Bánh Pudding Crème Brûlée",
+    ja: "メロディ ブリュレプリン",
+    zh: "焦糖烤布蕾布丁",
+    ko: "멜로디 크렘 브륄레 푸딩",
+    th: "พุดดิ้งแครมบรูเลสูตร Mellodi"
+  }
+};
+
+export function translate(key: string, lang: string): string {
+  const dictionary = UI_TRANSLATIONS[lang] || UI_TRANSLATIONS["en"];
+  return dictionary[key] || UI_TRANSLATIONS["en"][key] || key;
+}
+
+export function translateProduct(prodId: string, lang: string): { name: string, description: string } {
+  const trans = PRODUCT_TRANSLATIONS[prodId];
+  if (!trans) return { name: "", description: "" };
+  return trans[lang] || trans["en"];
+}
+
+export function translateTopping(topId: string, lang: string): string {
+  const trans = TOPPING_TRANSLATIONS[topId];
+  if (!trans) return topId;
+  return trans[lang] || trans["en"];
+}
+
+export function translateCategory(cat: string, lang: string): string {
+  const categoriesMap: Record<string, Record<string, string>> = {
+    "Milk Tea": {
+      en: "Milk Tea",
+      vi: "Trà Sữa",
+      ja: "ミルクティー",
+      zh: "奶茶",
+      ko: "밀크티",
+      th: "ชานม"
+    },
+    "Pure Tea": {
+      en: "Pure Tea",
+      vi: "Trà Nguyên Bản",
+      ja: "ストレートティー",
+      zh: "原叶纯茶",
+      ko: "오리지널 티",
+      th: "ชาใส"
+    },
+    "Fruit Tea": {
+      en: "Fruit Tea",
+      vi: "Trà Trái Cây",
+      ja: "フルーツティー",
+      zh: "鲜果茶",
+      ko: "과일티",
+      th: "ชาผลไม้"
+    },
+    "Coffee": {
+      en: "Coffee",
+      vi: "Cà Phê",
+      ja: "コーヒー",
+      zh: "咖啡",
+      ko: "커피",
+      th: "กาแฟ"
+    },
+    "Desserts": {
+      en: "Desserts",
+      vi: "Bánh Ngọt",
+      ja: "デザート",
+      zh: "甜点",
+      ko: "디저트",
+      th: "ของหวาน"
+    },
+    "Merchandise": {
+      en: "Merchandise",
+      vi: "Phụ Kiện",
+      ja: "周辺グッズ",
+      zh: "周边商品",
+      ko: "MD 상품",
+      th: "สินค้าลิขสิทธิ์"
+    },
+    "All": {
+      en: "All",
+      vi: "Tất Cả",
+      ja: "すべて",
+      zh: "全部",
+      ko: "전체",
+      th: "ทั้งหมด"
+    }
+  };
+
+  const map = categoriesMap[cat];
+  if (!map) return cat;
+  return map[lang] || map["en"];
+}
